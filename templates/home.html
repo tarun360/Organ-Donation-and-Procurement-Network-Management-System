@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+ crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<html>
+
+<head>
+	<title>Login Page</title>
+</head>
+
+<body>
+	<nav class="navbar navbar-dark bg-dark justify-content-between">
+		<form action="/home">
+			<button style="border: 0px solid transparent;" class="btn btn-outline-primary">HOME</button>
+		</form>
+		<form class="form-inline" action="/logout">
+			<label style="color:white; padding-right: 10px">Hi {{session.get('username')}}!</label>
+			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+		</form>
+	</nav>
+	<div class="jumbotron">
+		<center>
+			<h1 class="display-4">Organ Donation and Procurement Management System</h1>
+		</center>
+	</div>
+
+	<div id="accordion">
+		<div class="card">
+			<div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne">
+				<h5 class="mb-0">
+					<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						<strong>User</strong>
+					</button>
+				</h5>
+			</div>
+			<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+				<div class="card-body">
+					<center>
+						<div>
+							<form action="/search_detail" method="POST">
+								<button class="btn btn-primary" style="width: 25%;" type="submit">View/Update/Delete User Details</button>
+							</form>
+						</div>
+					</center>
+					<br>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo">
+				<h5 class="mb-0">
+					<button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+						<strong>Search</strong>
+					</button>
+				</h5>
+			</div>
+
+			<div id="collapseTwo" class="collapse collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+				<div class="card-body">
+					<center>
+						<div>
+							<form action="/search_User_details" method="POST">
+								<button class="btn btn-primary" style="width: 25%;" type="submit">Search User by Details</button>
+							</form>
+						</div>
+					</center>
+					<br>
+					<center>
+						<div>
+							<form action="/search_Patient_details" method="POST">
+								<button class="btn btn-primary" style="width: 25%;" type="submit">Search Patient by Details</button>
+							</form>
+						</div>
+					</center>
+					<br>
+					<center>
+						<div>
+							<form action="/search_Donor_details" method="POST">
+								<button class="btn btn-primary" style="width: 25%;" type="submit">Search Donor by Details</button>
+							</form>
+						</div>
+					</center>
+					<br>
+          <center>
+						<div>
+							<form action="/search_Organ_details" method="POST">
+								<button class="btn btn-primary" style="width: 25%;" type="submit">Search Organ by Details</button>
+							</form>
+						</div>
+					</center>
+					<br>
+					<center>
+						<div>
+							<form action="/search_Organization_details" method="POST">
+								<button class="btn btn-primary" style="width: 25%;" type="submit">Search Organization by Details</button>
+							</form>
+						</div>
+					</center>
+					<br>
+					<center>
+						<div>
+							<form action="/search_Organization_head_details" method="POST">
+								<button class="btn btn-primary" style="width: 25%;" type="submit">Search Organization Head by Details</button>
+							</form>
+						</div>
+					</center>
+					<br>
+					<center>
+						<div>
+							<form action="/search_Doctor_details" method="POST">
+								<button class="btn btn-primary" style="width: 25%;" type="submit">Search Doctor Details</button>
+							</form>
+						</div>
+					</center>
+					<br>
+          <center>
+						<div>
+							<form action="/search_Transaction" method="POST">
+								<button class="btn btn-primary" style="width: 25%;" type="submit">Search Transaction Details</button>
+							</form>
+						</div>
+					</center>
+					<br>
+          <center>
+						<div>
+							<form action="/search_log" method="POST">
+								<button class="btn btn-primary" style="width: 25%;" type="submit">Search Log Details</button>
+							</form>
+						</div>
+					</center>
+					<br>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header" id="headingThree" data-toggle="collapse" data-target="#collapseThree">
+				<h5 class="mb-0">
+					<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+					 aria-controls="collapseThree">
+						<strong>Add</strong>
+					</button>
+				</h5>
+			</div>
+			<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+				<div class="card-body">
+					<center>
+						<div>
+							<form action="/add_User_page" method="POST">
+								<button class="btn btn-primary" style="width:25%" type="submit">Add User</button>
+							</form>
+						</div>
+					</center>
+					<br>
+          <center>
+						<div>
+							<form action="/add_User_phone_no_page" method="POST">
+								<button class="btn btn-primary" style="width:25%" type="submit">Add User Phone Number</button>
+							</form>
+						</div>
+					</center>
+					<br>
+					<center>
+						<div>
+							<form action="/add_Patient_page" method="POST">
+								<button class="btn btn-primary" style="width:25%" type="submit">Add Patient</button>
+							</form>
+						</div>
+					</center>
+					<br>
+					<center>
+						<div>
+							<form action="/add_Donor_page" method="POST">
+                <button class="btn btn-primary" style="width:25%" type="submit">Add Donor</button>
+              </form>
+            </div>
+					</center>
+					<!-- <br>
+					<center>
+						<div>
+							<form action="/add_Organ_available_page" method="POST">
+								<button class="btn btn-primary" style="width:25%" type="submit">Add Organ</button>
+							</form>
+						</div>
+					</center> -->
+					<br>
+          <center>
+            <div>
+              <form action="/add_Doctor_page" method="POST">
+                <button class="btn btn-primary" style="width:25%" type="submit">Add Doctor</button>
+              </form>
+            </div>
+          </center>
+          <br>
+          <center>
+            <div>
+              <form action="/add_Doctor_phone_no_page" method="POST">
+                <button class="btn btn-primary" style="width:25%" type="submit">Add Doctor Phone Number</button>
+              </form>
+            </div>
+          </center>
+          <br>
+          <center>
+						<div>
+							<form action="/add_Organization_page" method="POST">
+								<button class="btn btn-primary" style="width:25%" type="submit">Add Organization</button>
+							</form>
+						</div>
+					</center>
+					<br>
+          <center>
+						<div>
+							<form action="/add_Organization_phone_no_page" method="POST">
+								<button class="btn btn-primary" style="width:25%" type="submit">Add Organization Phone Number</button>
+							</form>
+						</div>
+					</center>
+					<br>
+          <center>
+						<div>
+							<form action="/add_Organization_head_page" method="POST">
+								<button class="btn btn-primary" style="width:25%" type="submit">Add Organization Head</button>
+							</form>
+						</div>
+					</center>
+          <br>
+          <center>
+						<div>
+							<form action="/add_Transaction_page" method="POST">
+								<button class="btn btn-primary" style="width:25%" type="submit">Add Transaction</button>
+							</form>
+						</div>
+					</center>
+					<br>
+					<br>
+				</div>
+			</div>
+		</div>
+    <div class='card'>
+      <div class="card-header" id="headingFour" data-toggle="collapse" data-target="#collapseFour">
+				<h5 class="mb-0">
+					<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+					 aria-controls="collapseFour">
+						<strong>Update </strong>
+					</button>
+				</h5>
+			</div>
+      <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+				<div class="card-body">
+					<center>
+						<div>
+							<form action="/update_user_page" method="POST">
+								<button class="btn btn-primary" style="width: 25%;" type="submit">Update User</button>
+							</form>
+						</div>
+					</center>
+					<br>``
+          <center>
+						<div>
+							<form action="/update_doctor_page" method="POST">
+								<button class="btn btn-primary" style="width: 25%;" type="submit">Update Doctor</button>
+							</form>
+						</div>
+					</center>
+					<br>
+          <center>
+						<div>
+							<form action="/update_organization_page" method="POST">
+								<button class="btn btn-primary" style="width: 25%;" type="submit">Update Organization</button>
+							</form>
+						</div>
+					</center>
+					<!-- <br>
+          <center>
+						<div>
+							<form action="/update_organization_head_page" method="POST">
+								<button class="btn btn-primary" style="width: 25%;" type="submit">Update Organization Head</button>
+							</form>
+						</div>
+					</center> -->
+					<br>
+        </div>
+      </div>
+    </div>
+		<div class="card">
+			<div class="card-header" id="headingFive" data-toggle="collapse" data-target="#collapseFive">
+				<h5 class="mb-0">
+					<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false"
+					 aria-controls="collapseFive">
+						<strong>Remove </strong>
+					</button>
+				</h5>
+			</div>
+			<div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+				<div class="card-body">
+					<center>
+						<div>
+							<form action="/remove_user" method="POST">
+								<button class="btn btn-primary" style="width: 25%;" type="submit">Remove User</button>
+							</form>
+						</div>
+					</center>
+					<br>
+					<center>
+						<div>
+							<form action="/remove_patient" method="POST">
+								<button class="btn btn-primary" style="width: 25%;" type="submit">Remove Patient</button>
+							</form>
+						</div>
+					</center>
+					<br>
+					<center>
+						<div>
+							<form action="/remove_donor" method="POST">
+								<button class="btn btn-primary" style="width: 25%;" type="submit">Remove Donor</button>
+							</form>
+						</div>
+					</center>
+					<br>
+					<center>
+						<div>
+							<form action="/remove_doctor" method="POST">
+								<button class="btn btn-primary" style="width: 25%;" type="submit">Remove Doctor</button>
+							</form>
+						</div>
+					</center>
+					<br>
+          <center>
+            <div>
+              <form action="/remove_organization" method="POST">
+                <button class="btn btn-primary" style="width: 25%;" type="submit">Remove Organization</button>
+              </form>
+            </div>
+          </center>
+          <br>
+          <center>
+            <div>
+              <form action="/remove_organization_head" method="POST">
+                <button class="btn btn-primary" style="width: 25%;" type="submit">Remove Organization Head</button>
+              </form>
+            </div>
+          </center>
+          <br>
+				</div>
+			</div>
+		</div>
+  <div class="card">
+    <div class="card-header" id="headingSix" data-toggle="collapse" data-target="#collapseSix">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false"
+         aria-controls="collapseSix">
+          <strong>Statistics </strong>
+        </button>
+      </h5>
+    </div>
+    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+      <div class="card-body">
+        <center>
+          <div>
+            <form action="/statistics" method="POST">
+              <button class="btn btn-primary" style="width: 25%;" type="submit">Statistics</button>
+            </form>
+          </div>
+        </center>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>

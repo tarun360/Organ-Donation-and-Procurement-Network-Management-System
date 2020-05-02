@@ -1,0 +1,102 @@
+<!doctype HTML>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<html>
+<title>Details</title>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark justify-content-between">
+        <form action="/home">
+            <button style="border: 0px solid transparent;" class="btn btn-outline-primary">HOME</button>
+        </form>
+        <form class="form-inline" action="/logout">
+            <label style="color:white; padding-right: 10px">Hi {{session.get('username')}}!</label>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+        </form>
+    </nav>
+    <div class="jumbotron">
+        <center>
+            <h1 class="display-4">Organ Donation and Procurement Management System</h1>
+        </center>
+    </div>
+
+    {% if not_found == True %}
+    <p>Sorry! Not Found</p>
+    {% else %}
+    <h3>USER DETAILS</h3>
+    <table class="table table-striped table-sm">
+        {% for i in range(0,fields | length) %}
+        <tr>
+            <th scope="row">{{i+1}}</th>
+            <td>{{fields[i]}}</td>
+            <td>{{res[i]}}</td>
+        </tr>
+        {%endfor%}
+        <tr>
+            <td>17</td>
+            <td>Phone Numbers</td>
+            <td>
+                {% for phone in phone_no %}
+                    {{phone[1]}}
+                    ;
+                {%endfor%}
+            </td>
+        </tr>
+    </table>
+    <h3>PATIENT DETAILS</h3>
+    {% if res_pat | length != 0%}
+        {%for j in range(0, res_pat | length)%}
+            <table class="table table-striped table-sm">
+                {% for i in range(0,fields_pat | length) %}
+                <tr>
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{fields_pat[i]}}</td>
+                    <td>{{res_pat[j][i]}}</td>
+                </tr>
+                {%endfor%}
+            </table>
+        {%endfor%}
+    {% else %}
+        <p>Sorry Not Applicable</p>
+    {%endif%}
+    <h3>DONOR DETAILS</h3>
+    {% if res_dnr | length != 0%}
+        {%for j in range(0, res_dnr | length)%}
+            <table class="table table-striped table-sm">
+                {% for i in range(0,fields_dnr | length) %}
+                <tr>
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{fields_dnr[i]}}</td>
+                    <td>{{res_dnr[j][i]}}</td>
+                </tr>
+                {%endfor%}
+            </table>
+        {%endfor%}
+    {% else %}
+    <p>Sorry Not Applicable</p>
+    {%endif%}
+    <h3>TRANSACTION DETAILS</h3>
+    {% if res_trans | length != 0%}
+        {%for j in range(0, res_trans | length)%}
+            <table class="table table-striped table-sm">
+                {% for i in range(0,fields_trans | length) %}
+                <tr>
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{fields_trans[i]}}</td>
+                    <td>{{res_trans[j][i]}}</td>
+                </tr>
+                {%endfor%}
+            </table>
+        {%endfor%}
+    {% else %}
+    <p>Sorry Not Applicable</p>
+    {%endif%}
+    {% endif %}
+    </body>
+</html>
