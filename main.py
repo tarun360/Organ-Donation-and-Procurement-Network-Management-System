@@ -21,8 +21,7 @@ def home():
     else:
         if session.get('isAdmin') :
             return render_template('home.html',username=session.get('username'))
-        else :
-            return home_student()
+        
 
 @app.route("/login",methods = ['GET','POST'])
 def login():
